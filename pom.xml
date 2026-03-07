@@ -20,7 +20,8 @@
 
     <modules>
         <module>config-service</module>
-        <!-- other modules will be added here later -->
+        <module>discovery-service</module>
+        <module>gateway-service</module>
     </modules>
 
     <properties>
