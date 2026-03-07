@@ -23,6 +23,7 @@
         <module>discovery-service</module>
         <module>gateway-service</module>
         <module>video-service</module>
+        <module>user-service</module>
     </modules>
 
     <properties>
