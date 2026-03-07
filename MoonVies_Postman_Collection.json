@@ -1,0 +1,141 @@
+{
+  "info": {
+    "name": "MoonVies Microservices API",
+    "description": "Tests for Video Service and User Service via API Gateway",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Video Service",
+      "item": [
+        {
+          "name": "Create Video",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Inception\",\n  \"description\": \"A thief who steals corporate secrets...\",\n  \"trailerUrl\": \"https://www.youtube.com/embed/YoHD9XEInc0\",\n  \"duration\": 148,\n  \"releaseYear\": 2010,\n  \"type\": \"FILM\",\n  \"category\": \"SCIENCE_FICTION\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/videos",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["videos"]
+            }
+          }
+        },
+        {
+          "name": "Get All Videos",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:8080/videos",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["videos"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "User Service",
+      "item": [
+        {
+          "name": "Create User",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"username\": \"johndoe\",\n  \"email\": \"john@example.com\",\n  \"password\": \"secret\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/users",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["users"]
+            }
+          }
+        },
+        {
+          "name": "Get All Users",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:8080/users",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["users"]
+            }
+          }
+        },
+        {
+          "name": "Add To Watchlist",
+          "request": {
+            "method": "POST",
+            "url": {
+              "raw": "http://localhost:8080/users/1/watchlist/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["users", "1", "watchlist", "1"]
+            }
+          }
+        },
+        {
+          "name": "Get User Watchlist",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:8080/users/1/watchlist",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["users", "1", "watchlist"]
+            }
+          }
+        },
+        {
+          "name": "Record Watch History",
+          "request": {
+            "method": "POST",
+            "url": {
+              "raw": "http://localhost:8080/users/1/history/1?progressTime=120&completed=true",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["users", "1", "history", "1"],
+              "query": [
+                { "key": "progressTime", "value": "120" },
+                { "key": "completed", "value": "true" }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get User Watch History",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:8080/users/1/history",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["users", "1", "history"]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
