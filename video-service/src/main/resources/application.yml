@@ -4,6 +4,8 @@ server:
 spring:
   application:
     name: video-service
+  config:
+    import: optional:configserver:http://localhost:8888
   datasource:
     url: jdbc:mysql://localhost:3308/video_db?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true
     username: root
